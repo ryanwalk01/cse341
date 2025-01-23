@@ -1,13 +1,18 @@
-var express = require('express');
+const express = require('express');
+const bodyParser = require('body-parser');
 require('dotenv').config();
-var app = express();
+
+const  app = express();
 const port = process.env.PORT || 8080;
 const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./db/connect');
 
-console.log('MongoDB URI:', process.env.MONGO_URI);
-
+app.use(bodyParser.json());
 app.use('/', require('./routes'));
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+});
 
 mongodb.initDb((err) => {
   if (err) {

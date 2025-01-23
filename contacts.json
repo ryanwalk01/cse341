@@ -19,5 +19,12 @@
     "email": "chadmiller@byui.edu",
     "favoriteColor": "Blue",
     "birthday": "06/20/2000"
+  },
+  {
+    "firstName": "Aiden",
+    "lastName": "Haroldson",
+    "email": "aidenharoldson@byui.edu",
+    "favoriteColor": "Yellow",
+    "birthday": "01/12/2002"
   }
 ]
