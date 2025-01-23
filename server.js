@@ -10,10 +10,10 @@ console.log('MongoDB URI:', process.env.MONGO_URI);
 app.use('/', require('./routes'));
 
 mongodb.initDb((err) => {
-    if (err) {
-        console.log(err);
-    } else {
-        app.listen(port);
-        console.log(`Connected to MongoDB and listening on port ${port}`);
-    }
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(port);
+    console.log(`Connected to MongoDB and listening on port ${port}`);
+  }
 });

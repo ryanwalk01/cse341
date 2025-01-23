@@ -1,23 +1,23 @@
 [
-    {
-        "firstName": "Ryan",
-        "lastName": "Walker",
-        "email": "ryanwalker@byui.edu",
-        "favoriteColor": "Green",
-        "birthday": "03/01/2001"
-    },
-    {
-        "firstName": "Stuart",
-        "lastName": "Russell",
-        "email": "stuartrussell@byui.edu",
-        "favoriteColor": "Yellow",
-        "birthday": "04/11/2002"
-    },
-    {
-        "firstName": "Chad",
-        "lastName": "Miller",
-        "email": "chadmiller@byui.edu",
-        "favoriteColor": "Blue",
-        "birthday": "06/20/2000"
-    }
+  {
+    "firstName": "Ryan",
+    "lastName": "Walker",
+    "email": "ryanwalker@byui.edu",
+    "favoriteColor": "Green",
+    "birthday": "03/01/2001"
+  },
+  {
+    "firstName": "Stuart",
+    "lastName": "Russell",
+    "email": "stuartrussell@byui.edu",
+    "favoriteColor": "Yellow",
+    "birthday": "04/11/2002"
+  },
+  {
+    "firstName": "Chad",
+    "lastName": "Miller",
+    "email": "chadmiller@byui.edu",
+    "favoriteColor": "Blue",
+    "birthday": "06/20/2000"
+  }
 ]
