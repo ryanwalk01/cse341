@@ -5,10 +5,10 @@
     "description": "API to Manage MongoDB contacts",
     "version": "1.0.0"
   },
-  "host": "https://cse341-ryan.onrender.com",
+  "host": "cse341-ryan.onrender.com",
   "basePath": "/contacts",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/all": {
