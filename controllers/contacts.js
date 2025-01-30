@@ -2,6 +2,9 @@ const mongodb = require('../db/connect');
 const { ObjectId } = require('mongodb');
 
 const allContacts = async (req, res, next) => {
+  /*
+  #swagger.summary = 'Get all contacts'
+  */
   try {
     const result = await mongodb.getDb().db().collection('contacts').find();
     result.toArray().then((lists) => {
@@ -14,6 +17,9 @@ const allContacts = async (req, res, next) => {
 };
 
 const getContactById = async (req, res, next) => {
+  /*
+#swagger.summary = 'Get contact ID'
+*/
   try {
     const contactId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db().collection('contacts').findOne({ _id: contactId });
@@ -26,7 +32,9 @@ const getContactById = async (req, res, next) => {
 
 const createContact = async (req, res, next) => {
   try {
-    /* #swagger.parameters['Contact JSON'] = {
+    /*
+    #swagger.summary = 'Create new contact' 
+    #swagger.parameters['Contact JSON'] = {
         in: 'body',
         description: 'New contact information',
         required: true,
@@ -43,7 +51,9 @@ const createContact = async (req, res, next) => {
 };
 
 const updateContact = async (req, res, next) => {
-  /* #swagger.parameters['Contact JSON'] = {
+  /* 
+  #swagger.summary = 'Update contact by ID'
+  #swagger.parameters['Contact JSON'] = {
     in: 'body',
     description: 'New contact information',
     required: true,
@@ -63,6 +73,9 @@ const updateContact = async (req, res, next) => {
 };
 
 const deleteContact = async (req, res, next) => {
+  /*
+  #swagger.summary = 'Delete contact by ID'
+  */
   try {
     const contactId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db().collection('contacts').deleteOne({ _id: contactId });
