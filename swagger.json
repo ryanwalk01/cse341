@@ -11,7 +11,7 @@
     "https"
   ],
   "paths": {
-    "/all": {
+    "/": {
       "get": {
         "description": "",
         "produces": [
@@ -25,33 +25,7 @@
             "description": "Internal Server Error"
           }
         }
-      }
-    },
-    "/byId/{id}": {
-      "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/create": {
+      },
       "post": {
         "description": "",
         "produces": [
@@ -79,7 +53,29 @@
         }
       }
     },
-    "/update/{id}": {
+    "/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
       "put": {
         "description": "",
         "produces": [
@@ -111,9 +107,7 @@
             "description": "Internal Server Error"
           }
         }
-      }
-    },
-    "/delete/{id}": {
+      },
       "delete": {
         "description": "",
         "produces": [
