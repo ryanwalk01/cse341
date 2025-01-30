@@ -10,9 +10,7 @@ const mongodb = require('./db/connect');
 const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('./swagger.json');
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 app.use(bodyParser.json());
-app.use('/', require('./routes'));
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(
@@ -23,6 +21,8 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   next();
 });
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.use('/', require('./routes'));
 
 mongodb.initDb((err) => {
   if (err) {
