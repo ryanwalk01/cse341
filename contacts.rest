@@ -16,7 +16,7 @@ Content-Type: application/json
 
 {
   "firstName": "Alec",
-  "lastName": "Benjamin",
+  "lastName": "Local",
   "email": "alecbenjamin@byui.edu",
   "favoriteColor": "Blue",
   "birthday": "1995/02/17"
@@ -28,14 +28,14 @@ Content-Type: application/json
 
 {
   "firstName": "Ryan",
-  "lastName": "Walker",
+  "lastName": "Local",
   "email": "ryanwalker@byui.edu",
-  "favoriteColor": "Teal",
+  "favoriteColor": "Blue",
   "birthday": "03/01/2001"
 }
 
 ### Delete contact
-DELETE http://localhost:8080/contacts/679283245ccb8d4c919be726 HTTP/1.1
+DELETE http://localhost:8080/contacts/679285fa5ccb8d4c919be728 HTTP/1.1
 
 
 ### Create contact (Render)
@@ -44,7 +44,7 @@ Content-Type: application/json
 
 {
   "firstName": "Alec",
-  "lastName": "Benjamin",
+  "lastName": "Render",
   "email": "alecbenjamin@byui.edu",
   "favoriteColor": "Blue",
   "birthday": "1995/02/17"
@@ -56,9 +56,9 @@ Content-Type: application/json
 
 {
   "firstName": "Ryan",
-  "lastName": "Walker",
+  "lastName": "Render",
   "email": "ryanwalker@byui.edu",
-  "favoriteColor": "Teal",
+  "favoriteColor": "Green",
   "birthday": "03/01/2001"
 }
 
