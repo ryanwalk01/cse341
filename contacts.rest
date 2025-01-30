@@ -5,7 +5,7 @@ GET http://localhost:8080/contacts/all HTTP/1.1
 GET http://localhost:8080/contacts/67893ea9783718988c195d3b HTTP/1.1
 
 ### Retrieve all contacts (Render)
-GET https://cse341-ryan.onrender.com/contacts HTTP/1.1
+GET https://cse341-ryan.onrender.com/contacts/all HTTP/1.1
 
 ### Retrieve single contact (Render)
 GET https://cse341-ryan.onrender.com/contacts/67893ea9783718988c195d3b HTTP/1.1

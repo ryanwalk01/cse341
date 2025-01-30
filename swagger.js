@@ -6,7 +6,7 @@ const doc = {
         title: 'Contacts API',
         description: 'API to Manage MongoDB contacts'
     },
-    host: 'https://cse341-ryan.onrender.com:8080',
+    host: 'https://cse341-ryan.onrender.com',
     schemes: ['http'],
     basePath: '/contacts'
 };
