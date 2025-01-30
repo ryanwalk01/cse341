@@ -9,7 +9,7 @@ const allContacts = async (req, res, next) => {
       res.status(200).json(lists);
     });
   } catch (error) {
-    next(error);
+    res.status(500).json(error);
   }
 };
 
@@ -20,7 +20,7 @@ const getContactById = async (req, res, next) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
   } catch (error) {
-    next(error);
+    res.status(500).json(error);
   }
 };
 
@@ -38,7 +38,7 @@ const createContact = async (req, res, next) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(201).json(result);
   } catch (error) {
-    next(error);
+    res.status(500).json(error);
   }
 };
 
@@ -58,7 +58,7 @@ const updateContact = async (req, res, next) => {
     res.status(204).json(result);
   }
   catch (error) {
-    next(error);
+    res.status(500).json(error);
   }
 };
 
@@ -69,7 +69,7 @@ const deleteContact = async (req, res, next) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
   } catch (error) {
-    next(error);
+    res.status(500).json(error);
   }
 };
 
