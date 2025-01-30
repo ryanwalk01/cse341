@@ -2,9 +2,6 @@ const mongodb = require('../db/connect');
 const { ObjectId } = require('mongodb');
 
 const allContacts = async (req, res, next) => {
-  /*
-    #swagger.description = 'API key: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N'
-  */
   try {
     const result = await mongodb.getDb().db().collection('contacts').find();
     result.toArray().then((lists) => {
