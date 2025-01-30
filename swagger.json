@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "My API",
-    "description": "Description",
+    "title": "Contacts API",
+    "description": "API to Manage MongoDB contacts",
     "version": "1.0.0"
   },
   "host": "localhost:8080",
-  "basePath": "/",
+  "basePath": "/contacts",
   "schemes": [
     "http"
   ],
@@ -24,7 +24,7 @@
         }
       }
     },
-    "/{getByIdid}": {
+    "/byId/{id}": {
       "get": {
         "description": "",
         "produces": [
@@ -32,7 +32,7 @@
         ],
         "parameters": [
           {
-            "name": "getByIdid",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -51,6 +51,18 @@
         "produces": [
           "application/json"
         ],
+        "parameters": [
+          {
+            "name": "Contact JSON",
+            "in": "body",
+            "description": "New contact information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -58,7 +70,7 @@
         }
       }
     },
-    "/{updateid}": {
+    "/update/{id}": {
       "put": {
         "description": "",
         "produces": [
@@ -66,10 +78,20 @@
         ],
         "parameters": [
           {
-            "name": "updateid",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "Contact JSON",
+            "in": "body",
+            "description": "New contact information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
           }
         ],
         "responses": {
@@ -79,7 +101,7 @@
         }
       }
     },
-    "/{deleteid}": {
+    "/delete/{id}": {
       "delete": {
         "description": "",
         "produces": [
@@ -87,7 +109,7 @@
         ],
         "parameters": [
           {
-            "name": "deleteid",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"

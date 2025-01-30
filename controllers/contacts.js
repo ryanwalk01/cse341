@@ -26,6 +26,13 @@ const getContactById = async (req, res, next) => {
 
 const createContact = async (req, res, next) => {
   try {
+    /* #swagger.parameters['Contact JSON'] = {
+        in: 'body',
+        description: 'New contact information',
+        required: true,
+        type: 'object'
+      } 
+    */
     const newContact = req.body;
     const result = await mongodb.getDb().db().collection('contacts').insertOne(newContact);
     res.setHeader('Content-Type', 'application/json');
@@ -36,6 +43,13 @@ const createContact = async (req, res, next) => {
 };
 
 const updateContact = async (req, res, next) => {
+  /* #swagger.parameters['Contact JSON'] = {
+    in: 'body',
+    description: 'New contact information',
+    required: true,
+    type: 'object'
+  } 
+  */
   try {
     const contactId = new ObjectId(req.params.id);
     const updatedContact = req.body;
