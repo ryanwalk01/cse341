@@ -2,16 +2,16 @@
 GET http://localhost:8080/contacts/all HTTP/1.1
 
 ### Retrieve single contact
-GET http://localhost:8080/contacts/67893ea9783718988c195d3b HTTP/1.1
+GET http://localhost:8080/contacts/byid/67893ea9783718988c195d3b HTTP/1.1
 
 ### Retrieve all contacts (Render)
 GET https://cse341-ryan.onrender.com/contacts/all HTTP/1.1
 
 ### Retrieve single contact (Render)
-GET https://cse341-ryan.onrender.com/contacts/67893ea9783718988c195d3b HTTP/1.1
+GET https://cse341-ryan.onrender.com/contacts/byid/67893ea9783718988c195d3b HTTP/1.1
 
 ### Create contact
-POST http://localhost:8080/contacts HTTP/1.1
+POST http://localhost:8080/contacts/create HTTP/1.1
 Content-Type: application/json
 
 {
@@ -23,23 +23,23 @@ Content-Type: application/json
 }
 
 ### Update contact
-PUT http://localhost:8080/contacts/67893ea9783718988c195d3b HTTP/1.1
+PUT http://localhost:8080/contacts/update/67893ea9783718988c195d3b HTTP/1.1
 Content-Type: application/json
 
 {
   "firstName": "Ryan",
   "lastName": "Local",
   "email": "ryanwalker@byui.edu",
-  "favoriteColor": "Blue",
+  "favoriteColor": "Green",
   "birthday": "03/01/2001"
 }
 
 ### Delete contact
-DELETE http://localhost:8080/contacts/679285fa5ccb8d4c919be728 HTTP/1.1
+DELETE http://localhost:8080/contacts/delete/679285fa5ccb8d4c919be728 HTTP/1.1
 
 
 ### Create contact (Render)
-POST https://cse341-ryan.onrender.com/contacts HTTP/1.1
+POST https://cse341-ryan.onrender.com/contacts/create HTTP/1.1
 Content-Type: application/json
 
 {
@@ -51,7 +51,7 @@ Content-Type: application/json
 }
 
 ### Update contact (Render)
-PUT https://cse341-ryan.onrender.com/contacts/67893ea9783718988c195d3b HTTP/1.1
+PUT https://cse341-ryan.onrender.com/contacts/update/67893ea9783718988c195d3b HTTP/1.1
 Content-Type: application/json
 
 {
@@ -63,5 +63,4 @@ Content-Type: application/json
 }
 
 ### Delete contact (Render)
-DELETE https://cse341-ryan.onrender.com/contacts/679283635ccb8d4c919be727 HTTP/1.1
-
+DELETE https://cse341-ryan.onrender.com/contacts/delete/679283635ccb8d4c919be727 HTTP/1.1
