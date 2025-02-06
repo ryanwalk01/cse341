@@ -7,8 +7,7 @@ const port = process.env.PORT || 8080;
 const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./db/connect');
 
-const swaggerUi = require('swagger-ui-express');
-const swaggerFile = require('./swagger.json');
+app.use('/', routes);
 
 app.use(bodyParser.json());
 app.use((req, res, next) => {
