@@ -23,6 +23,9 @@ const getContactById = async (req, res, next) => {
   try {
     const contactId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db().collection('contacts').findOne({ _id: contactId });
+    if (!result) {
+      res.status(500).json({ message: 'Contact not found' });
+    };
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
   } catch (error) {
@@ -42,6 +45,17 @@ const createContact = async (req, res, next) => {
       } 
     */
     const newContact = req.body;
+    if (!newContact) {
+      res.status(500).json({ message: 'Invalid request' });
+    };
+
+    const parameters = ['firstName', 'lastName', 'email', 'favoriteColor', 'birthday'];
+    for (let i = 0; i < parameters.length; i++) {
+      if (!newContact.parameters[i]) {
+        res.status(500).json({ message: parameters[i] + ' is required' });
+      };
+    };
+
     const result = await mongodb.getDb().db().collection('contacts').insertOne(newContact);
     res.setHeader('Content-Type', 'application/json');
     res.status(201).json(result);
@@ -63,12 +77,19 @@ const updateContact = async (req, res, next) => {
   try {
     const contactId = new ObjectId(req.params.id);
     const updatedContact = req.body;
+
+    if (!updatedContact) {
+      res.status(500).json({ message: 'Invalid request' });
+    };
     const result = await mongodb.getDb().db().collection('contacts').updateOne({ _id: contactId }, { $set: updatedContact });
+    if (!result) {
+      res.status(500).json({ message: 'Contact not found' });
+    };
     res.setHeader('Content-Type', 'application/json');
     res.status(204).json(result);
   }
   catch (error) {
-    res.status(500).json(error);
+    res.status(500).json({ message: 'Contact not found' });
   }
 };
 
@@ -78,11 +99,17 @@ const deleteContact = async (req, res, next) => {
   */
   try {
     const contactId = new ObjectId(req.params.id);
+    if (!contactId) {
+      res.status(500).json({ message: 'Please include the ID of the contact you would like to delete.' });
+    }
     const result = await mongodb.getDb().db().collection('contacts').deleteOne({ _id: contactId });
+    if (!result) {
+      res.status(500).json({ message: 'Contact not found' });
+    };
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).json({ message: 'Contact not found' });
   }
 };
 
